@@ -7,6 +7,8 @@ Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "DataModel", "DataModel\DataModel.rxproj", "{C79B591F-E3C0-43ED-A370-0293E91E6C7F}"
 EndProject
+Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "VisualReporting", "VisualReporting\VisualReporting.rxproj", "{7038CC89-BB2D-4E43-8914-2F6554484886}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C79B591F-E3C0-43ED-A370-0293E91E6C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C79B591F-E3C0-43ED-A370-0293E91E6C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C79B591F-E3C0-43ED-A370-0293E91E6C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7038CC89-BB2D-4E43-8914-2F6554484886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7038CC89-BB2D-4E43-8914-2F6554484886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7038CC89-BB2D-4E43-8914-2F6554484886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7038CC89-BB2D-4E43-8914-2F6554484886}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
