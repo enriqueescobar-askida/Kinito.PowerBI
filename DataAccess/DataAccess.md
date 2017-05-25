@@ -36,5 +36,9 @@ To: Date
 
 # Web data source
 
+## Source
+
+http://moneycentral.msn.com/investor/external/excel/quotes.asp?symbol=$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX
+
 # Facebook
 
