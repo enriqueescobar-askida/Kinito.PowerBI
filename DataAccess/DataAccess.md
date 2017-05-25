@@ -14,7 +14,25 @@ Afghanistan,"Middle East, North Africa, and Greater Arabia",1/1/1901, 613.99
 
 ## Change type
 
+Column: Year
+
+To: Date
+
 # Median Age
+
+## Source
+
+./Data/MedianAge.xlsx
+
+## Navigation
+
+## Change type
+
+## Promote headers
+
+## Remove NA columns
+
+## Remove NA rows
 
 # Web data source
 
