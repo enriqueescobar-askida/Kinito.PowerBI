@@ -15,6 +15,8 @@ RemoveNaRowsFromTibble <- function(aTibble = tibble::as_tibble(NULL)){
 
 source("Lib/readr.Utils.R");
 GDP <- GDPcsvToTibble("Data/GDP.csv");
+GDP <- RemoveNaColsFromTibble(GDP);
+GDP <- RemoveNaRowsFromTibble(GDP);
 head(GDP);
 
 
