@@ -40,5 +40,9 @@ To: Date
 
 http://moneycentral.msn.com/investor/external/excel/quotes.asp?symbol=$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX
 
+## Navigation
+
+## Change type
+
 # Facebook
 
