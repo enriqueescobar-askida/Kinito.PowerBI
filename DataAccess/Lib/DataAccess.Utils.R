@@ -16,12 +16,11 @@ RemoveNaRowsFromTibble <- function(aTibble = tibble::as_tibble(NULL)){
 source("Lib/readr.Utils.R");
 GDP <- GDPcsvToTibble("Data/GDP.csv");
 GDP <- RemoveNaColsFromTibble(GDP);
-GDP <- RemoveNaRowsFromTibble(GDP);
-head(GDP);
+head(GDP, 1);
 
 
 source("Lib/readxl.Utils.R");
 MedianAge <- MedianAgeXlsToTibble("Data/MedianAge.xlsx");
 MedianAge <- RemoveNaColsFromTibble(MedianAge);
 MedianAge <- RemoveNaRowsFromTibble(MedianAge);
-head(MedianAge);
+head(MedianAge, 1);
