@@ -1,13 +1,17 @@
 library(XML);
 library(plyr);
 
-getKeyStats_xpath <- function(symbol = "$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX") {
-  msnMoneyURL <- "http://www.msn.com/en-us/money/quoteslookup?symbol=";
-  msnMoneyURL <- paste(msnMoneyURL, symbol, sep = "");
-  html_text <- htmlParse(msnMoneyURL, encoding="UTF-8");
+MsnSymbolPath <- function(stockSymbol = "$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX"){
   
+  return(paste("http://www.msn.com/en-us/money/quoteslookup?symbol=", stockSymbol, sep = ""));
+}
+
+getKeyStats_xpath <- function(symbol = "$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX") {
+  
+  msnMoneyURL <- MsnSymbolPath(trimws(symbol));
+  htmlText <- XML::htmlParse(msnMoneyURL, encoding="UTF-8");
   # search for <tr> nodes anywhere inside <tbody><tbody/>
-  nodes <- getNodeSet(html_text, "/*//tr");
+  nodes <- XML::getNodeSet(htmlText, "/*//tr");
   
   if(length(nodes) > 0 ) {
     measures <- sapply(nodes, xmlValue);
@@ -22,7 +26,7 @@ getKeyStats_xpath <- function(symbol = "$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX") {
       measures[dups[i]] = paste(measures[dups[i]], i, sep=" ");
     
     # use siblings function to get value
-    values <- sapply(nodes, function(x)  xmlValue(getSibling(x)));
+    values <- sapply(nodes, function(x)  xmlValue(XML::getSibling(x)));
     
     df <- data.frame(t(values))
     colnames(df) <- measures
