@@ -46,3 +46,13 @@ http://moneycentral.msn.com/investor/external/excel/quotes.asp?symbol=$INDU,$COM
 
 # Facebook
 
+## Prepare
+
+http://thinktostart.com/analyzing-facebook-with-r/
+
+https://bigdataenthusiast.wordpress.com/2016/03/19/mining-facebook-data-using-r-facebook-api/
+
+## Install Rfacebook
+
+
+
