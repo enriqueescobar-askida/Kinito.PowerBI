@@ -18,9 +18,24 @@ GDP <- GDPcsvToTibble("Data/GDP.csv");
 GDP <- RemoveNaColsFromTibble(GDP);
 head(GDP, 1);
 
-
 source("Lib/readxl.Utils.R");
 MedianAge <- MedianAgeXlsToTibble("Data/MedianAge.xlsx");
 MedianAge <- RemoveNaColsFromTibble(MedianAge);
 MedianAge <- RemoveNaRowsFromTibble(MedianAge);
 head(MedianAge, 1);
+
+source("Lib/MsnMoney.Utils.R");
+# Read and parse HTML file
+MsnMoneyHtml <- MsnSymbolHtmlTree("$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX");
+# Extract all the paragraphs (HTML tag is p) from root.
+MsnMoneyTrList <- MsnHtmlTreeExtractTrList(MsnMoneyHtml);
+# Unlist flattens the list to create a character vector. '//p'
+MsnMoneyText <- unlist(MsnMoneyTrList);
+# Replace all \r by nothing
+MsnMoneyText <- gsub('\\r', '', MsnMoneyText);
+# Replace all \n by spaces
+MsnMoneyText <- gsub('\\n', '', MsnMoneyText);
+# Join all the elements of the character vector into a single
+# character string, separated by spaces
+MsnMoneyText <- paste(MsnMoneyText, collapse = "\r\n");
+
