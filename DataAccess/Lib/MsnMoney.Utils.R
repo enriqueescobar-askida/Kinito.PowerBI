@@ -68,8 +68,14 @@ MsnHtmlTreeExtractTrList <- function(htmlText = NULL){
   if(is.null(htmlText)){
     return(NULL);
   } else {
-    # search for <tr> nodes anywhere inside <tbody><tbody/>
-    return(XML::xpathApply(htmlText, "//tr", xmlValue));
+    # search for <tr> nodes anywhere inside <tbody></tbody>
+    trList <- XML::xpathApply(htmlText, "//tr", xmlValue);
+    headerList <- c(1, 2);
+    footerList <- seq((length(trList)-8), length(trList));
+    trList <- trList[-headerList];
+    trList <- trList[-footerList];
+    
+    return(trList);
   }
 }
 
