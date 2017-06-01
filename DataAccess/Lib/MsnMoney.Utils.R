@@ -122,14 +122,14 @@ GetMsnMoneyRowNames <- function(aList = list(NULL)){
   }
 }
 
-GetMsnMoneyDataFrame <- function(aList = list(NULL),
-                                 colNames = list(NULL),
-                                 rowNames = list(NULL)){
+GetMsnMoneyDataFrame <- function(aList = list(NULL)){
   
   if(is.null(unlist(aList))){
     
     return(NULL);
   } else {
+    colNames <- GetMsnMoneyColNames(aList);
+    rowNames <- GetMsnMoneyRowNames(aList);
     aList <- aList[-1];
     aDataFrame <- NULL;
     
@@ -138,10 +138,11 @@ GetMsnMoneyDataFrame <- function(aList = list(NULL),
       l <- gsub("\r\n\r\n", "\r\n", l);
       l <- gsub(" ", "", l);
       l <- gsub("\r\n", "\n", l);
+      l <- gsub(",", "", l);
       l <- gsub("N/A", "NA", l);
       rowList <- unlist(strsplit(l, split="\n\n"));
       print(rowList);
-      aDataFrame <- rbind(aDataFrame, as.character(rowList));
+      aDataFrame <- rbind(aDataFrame, as.numeric(rowList));
     }
     
     colnames(aDataFrame) <- colNames;
