@@ -87,14 +87,67 @@ MsnHtmlTreeExtractTrList <- function(htmlText = NULL){
   }
 }
 
-GetMsnMoneyColNames <- function(aText = ""){
+GetMsnMoneyColNames <- function(aList = list(NULL)){
   
-  if(aText == ""){
+  if(is.null(unlist(aList))){
     
     return(NULL);
   } else {
+    aText <- aList[[1]];
     
-    return(strsplit(aText, split="\n"));
+    if(aText == ""){
+      
+      return(NULL);
+    } else {
+      
+      return(unlist(strsplit(aText, split="\n")));
+    }
+  }
+}
+
+GetMsnMoneyRowNames <- function(aList = list(NULL)){
+  
+  if(is.null(unlist(aList))){
+    
+    return(NULL);
+  } else {
+    aList <- aList[-1];
+    rowList <- NULL;
+    
+    for (l in aList) {
+      rowList <- c(rowList, sub("\r\n.+", "", l));
+    }
+    
+    return(rowList);
+  }
+}
+
+GetMsnMoneyDataFrame <- function(aList = list(NULL),
+                                 colNames = list(NULL),
+                                 rowNames = list(NULL)){
+  
+  if(is.null(unlist(aList))){
+    
+    return(NULL);
+  } else {
+    aList <- aList[-1];
+    aDataFrame <- NULL;
+    
+    for (l in aList) {
+      l <- sub("^.+News\n\n\n", "", l);
+      l <- gsub("\r\n\r\n", "\r\n", l);
+      l <- gsub(" ", "", l);
+      l <- gsub("\r\n", "\n", l);
+      l <- gsub("N/A", "NA", l);
+      rowList <- unlist(strsplit(l, split="\n\n"));
+      print(rowList);
+      aDataFrame <- rbind(aDataFrame, as.character(rowList));
+    }
+    
+    colnames(aDataFrame) <- colNames;
+    row.names(aDataFrame) <- rowNames;
+    
+    return(tibble::as_tibble(as.data.frame(aDataFrame)));
   }
 }
 
