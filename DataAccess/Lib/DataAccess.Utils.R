@@ -32,6 +32,8 @@ MsnMoneyHtml <- MsnSymbolHtmlTree("$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX");
 # Extract all the paragraphs (HTML tag is p) from root.
 MsnMoneyTrList <- MsnHtmlTreeExtractTrList(MsnMoneyHtml);
 rm(MsnMoneyHtml);
+# fetch column names
+MsnMoneyColNames <- GetMsnMoneyColNames(MsnMoneyTrList[[1]]);
 # Unlist flattens the list to create a character vector. '//p'
 MsnMoneyText <- unlist(MsnMoneyTrList);
 rm(MsnMoneyTrList);

@@ -75,7 +75,26 @@ MsnHtmlTreeExtractTrList <- function(htmlText = NULL){
     trList <- trList[-headerList];
     trList <- trList[-footerList];
     
+    trList <- trimws(trList);
+    aText <- trList[[1]];
+    aText <- sub("^\\s+", "", aText);
+    aText <- sub("\r\n                            ", "", aText);
+    aText <- sub("\r\n                           ", "", aText);
+    trList[[1]] <- aText;
+    rm(aText);
+    
     return(trList);
+  }
+}
+
+GetMsnMoneyColNames <- function(aText = ""){
+  
+  if(aText == ""){
+    
+    return(NULL);
+  } else {
+    
+    return(strsplit(aText, split="\n"));
   }
 }
 
