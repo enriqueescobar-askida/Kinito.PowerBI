@@ -34,15 +34,10 @@ MsnMoneyTrList <- MsnHtmlTreeExtractTrList(MsnMoneyHtml);
 rm(MsnMoneyHtml);
 # fetch data frme
 MsnMoneyDataFrame <- GetMsnMoneyDataFrame(MsnMoneyTrList);
-row.names(MsnMoneyDataFrame);
+rm(MsnMoneyDataFrame);
 # Unlist flattens the list to create a character vector. '//p'
 MsnMoneyText <- unlist(MsnMoneyTrList);
 rm(MsnMoneyTrList);
-# Replace all \r by nothing
-#MsnMoneyText <- gsub('\\r', '', MsnMoneyText);
-# Replace all \n by spaces
-#MsnMoneyText <- gsub('\\n', '', MsnMoneyText);
-# Join all the elements of the character vector into a single
 # character string, separated by spaces
 MsnMoneyText <- paste(MsnMoneyText, collapse = "\r\n");
 write(MsnMoneyText, "Data/MsnMoney.txt", sep = "\r\n");
