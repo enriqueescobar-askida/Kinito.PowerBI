@@ -43,3 +43,19 @@ MsnMoneyText <- paste(MsnMoneyText, collapse = "\r\n");
 write(MsnMoneyText, "Data/MsnMoney.txt", sep = "\r\n");
 rm(MsnMoneyText);
 
+source("Lib/YahooFinance.Utils.R");
+yahooFinanceSymbols <- c("IBM", "LNKD");
+yahooFinanceSymbolURLs <- YahooFinanceSymbolsToURL(yahooFinanceSymbols);
+yahoos <- YahooFinanceURLToDataFrames(yahooFinanceSymbolURLs);
+ggplot(ibm,aes(Date,Close)) + 
+  geom_line(aes(color="ibm")) +
+  geom_line(data=lnkd,aes(color="lnkd")) +
+  labs(color="Legend") +
+  scale_colour_manual("", breaks = c("ibm", "lnkd"), values = c("blue", "brown")) +
+  ggtitle("Closing Stock Prices: IBM & Linkedin") + 
+  theme(plot.title = element_text(lineheight=.7, face="bold"));
+# yahooStockData <-
+#   read.csv(getYahooStockUrl("sbux", "2008-1-1", "2008-12-31"),
+#            stringsAsFactors = FALSE);
+# sbux_monthly <- yahooStockData[order(yahooStockData$Date),
+#                                c('Date', 'Adj.Close')];
