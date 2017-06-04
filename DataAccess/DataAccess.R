@@ -1,5 +1,9 @@
 source("Lib/DataAccess.Utils.R");
 
+
+source("Lib/RSQLite.Utils.R");
+
+
 source("Lib/readr.Utils.R");
 GDP <- GDPcsvToTibble("Data/GDP.csv");
 GDP <- RemoveNaColsFromTibble(GDP);
