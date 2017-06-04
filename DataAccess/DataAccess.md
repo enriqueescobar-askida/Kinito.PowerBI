@@ -12,9 +12,9 @@ Afghanistan,"Middle East, North Africa, and Greater Arabia",1/1/1901, 613.99
 
 ...
 
-### Promote headers
+#### Promote headers
 
-### Change type
+#### Change type
 
 Column: Year
 
@@ -26,15 +26,15 @@ To: Date
 
 ./Data/MedianAge.xlsx
 
-### Navigation
+#### Navigation
 
-### Change type
+#### Change type
 
-### Promote headers
+#### Promote headers
 
-### Remove NA columns
+#### Remove NA columns
 
-### Remove NA rows
+#### Remove NA rows
 
 ## Web data source
 
@@ -42,9 +42,9 @@ To: Date
 
 http://moneycentral.msn.com/investor/external/excel/quotes.asp?symbol=$INDU,$COMP,$TRAN,$UTIL,$COMPX,$OEX
 
-### Navigation
+#### Navigation
 
-### Change type
+#### Change type
 
 ## Facebook
 
