@@ -26,9 +26,12 @@ dbData$BrandName <- as.factor(dbData$BrandName);
 dbData$WeightUnitMeasureID <- as.factor(dbData$WeightUnitMeasureID);
 dbData$UnitOfMeasureID <- as.integer(dbData$UnitOfMeasureID);
 dbData$UnitOfMeasureName <- as.factor(dbData$UnitOfMeasureName);
+dbData$AvailableForSaleDate <- as.character(dbData$AvailableForSaleDate);
 dbData$StockTypeID <- as.integer(dbData$StockTypeID);
 dbData$StockTypeName <- as.factor(dbData$StockTypeName);
 dbData$Status <- as.factor(dbData$Status);
+dbData$LoadDate <- as.character(dbData$LoadDate);
+dbData$UpdateDate <- as.character(dbData$UpdateDate);
 dbData <- tibble::as_tibble(dbData);
 
 RSQLite::dbDisconnect(db);
