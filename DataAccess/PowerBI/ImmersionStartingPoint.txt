@@ -1,0 +1,36 @@
+AZURE SQL SERVER 
+-----------------------------------------------------------------------------------------------------
+Server: a19a1iyxvo.database.windows.net
+Database: ContosoRetailDW
+*notice you have an option to write a SQL statement, we will just select a table for this exercise
+Click OK
+In the credentials pane select Database in the left pane enter the following credentials
+username: ImmersionUser
+password: pass@word1
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+DAX Calculations
+-----------------------------------------------------------------------------------------------------
+Sales Table
+------------------------
+
+Margin = Divide([Profit],[Sales $],0)
+YTD Sales = TOTALYTD('Sales'[Sales $],'Date'[Date])
+
+
+What if
+------------------------
+Sales $ = SUM([SalesAmount])*(1+'Sales Adjust'[Sales Adjust Value])
+
+Dashboard Colours
+Blue: 0070C0
+Grey: CDCDCD
+
+
+
+
+
+
+
+
