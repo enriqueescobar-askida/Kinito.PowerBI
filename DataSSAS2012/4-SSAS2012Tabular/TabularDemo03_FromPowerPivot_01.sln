@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "TabularDemo03_FromPowerPivot_01", "TabularDemo03_FromPowerPivot_01\TabularDemo03_FromPowerPivot_01.smproj", "{35864DF1-2EF6-4E3F-895D-3E2C289E4D79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|x86 = Development|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35864DF1-2EF6-4E3F-895D-3E2C289E4D79}.Development|x86.ActiveCfg = Development|x86
+		{35864DF1-2EF6-4E3F-895D-3E2C289E4D79}.Development|x86.Build.0 = Development|x86
+		{35864DF1-2EF6-4E3F-895D-3E2C289E4D79}.Development|x86.Deploy.0 = Development|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

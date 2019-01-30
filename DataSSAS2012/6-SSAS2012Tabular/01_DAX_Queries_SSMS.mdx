@@ -1,0 +1,18 @@
+-- #1 --
+EVALUATE
+   'Product Category'
+
+-- #2 --
+EVALUATE
+   'Product Category'
+ORDER BY
+   'Product Category' [EnglishProductCategoryName] ASC
+
+   -- #3 --
+EVALUATE
+CALCULATETABLE(
+   'Product Category',
+   'Product Category' [EnglishProductCategoryName] = "Clothing"
+   )
+ORDER BY
+   'Product Category' [EnglishProductCategoryName]

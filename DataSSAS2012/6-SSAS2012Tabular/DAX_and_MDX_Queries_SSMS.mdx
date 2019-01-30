@@ -1,0 +1,17 @@
+-- #1 DAX --
+EVALUATE
+SUMMARIZE(
+	'Internet Sales',
+   'Product Category'[Product Category Name],
+   "Sum of Net Profit", 'Internet Sales'[Internet Total Sales]
+)
+ORDER BY
+   'Product Category' [Product Category Name] ASC
+
+
+-- #2 MDX --
+SELECT
+   [Measures].[Internet Total Sales] ON COLUMNS,
+   NON EMPTY [Product Category].[Product Category Name].[Product Category Name] ON ROWS
+FROM
+   [MODEL]
