@@ -88,9 +88,18 @@ or
 
 python -m pip install PyOpenSSL
 
+### virtualenv
 
 pip install virtualenv
 
 or
 
 python -m pip install virtualenv
+
+### scikit-learn
+
+pip install scikit-learn
+
+or
+
+python -m pip install scikit-learn
