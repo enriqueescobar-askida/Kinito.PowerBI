@@ -68,6 +68,8 @@ python -m pip install pygsheets
 
 https://gspread.readthedocs.io/en/latest/api.html
 
+https://www.makeuseof.com/tag/read-write-google-sheets-python/
+
 pip install gspread
 
 or
