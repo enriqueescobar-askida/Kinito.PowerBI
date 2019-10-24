@@ -72,6 +72,14 @@ or
 
 python -m pip install gspread
 
+### gdata
+
+pip install gdata
+
+or
+
+python -m pip install gdata
+
 ### oauth2client
 
 pip install --upgrade oauth2client
