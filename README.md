@@ -115,3 +115,11 @@ pip install scikit-learn
 or
 
 python -m pip install scikit-learn
+
+### pillow
+
+pip install pillow
+
+or
+
+python -m pip install pillow
