@@ -66,6 +66,8 @@ python -m pip install pygsheets
 
 ### gspread https://github.com/burnash/gspread
 
+https://gspread.readthedocs.io/en/latest/api.html
+
 pip install gspread
 
 or
